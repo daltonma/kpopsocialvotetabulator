@@ -23,3 +23,25 @@ Given-Taken - ENHYPEN
 ```
 
 **This repo STANs ENHYPEN**
+
+## Usage
+Create the `ballots.csv` and `choices.list` as described above.
+
+Then run `python tabulatevotes.py` and your results should appear.
+
+
+## Examples
+```csv
+Choice 1, Choice 2, Choice 3
+Halazia - ATEEZ,Maniac - Stray Kids,Seven - Jungkook
+Case 143 - Stray Kids,LALALALA - Stray Kids,Bite Me - ENHYPEN
+Given-Taken - ENHYPEN,Oh Mymy : 7s - TWS,Bite Me - ENHYPEN
+We Don't Sweat - xikers,Case 143 - Stray Kids,Halazia - ATEEZ
+Given-Taken - ENHYPEN,plot twist - TWS,_WORLD - SEVENTEEN
+Halazia - ATEEZ,Maniac - Stray Kids,Seven - Jungkook
+```
+
+Result:
+
+![an example text, decorative](image.png)
+
