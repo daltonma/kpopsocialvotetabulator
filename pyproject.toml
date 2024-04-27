@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "kpopsocialvotetabulator"
+version = "0.1.0"
+description = "A Vote Tabulator for K-Pop Social ballots."
+authors = ["bohrium2b <dzm2026@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+rich = "^13.7.1"
+pyrankvote = "^2.0.6"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
