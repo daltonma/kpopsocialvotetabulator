@@ -43,5 +43,5 @@ Halazia - ATEEZ,Maniac - Stray Kids,Seven - Jungkook
 
 Result:
 
-![an example text, decorative](image.png)
+![an example text, decorative](example.png)
 
