@@ -5,7 +5,7 @@ This is a script to process ballots for song collection.
 Ballots should be a csv file called `ballots.csv` and should contain the following structure:
 
 ```csv
-Timestamp, Email Address, Choice 1, Choice 2, Choice 3
+Choice 1, Choice 2, Choice 3
 ```
 
 
