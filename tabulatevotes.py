@@ -1,3 +1,4 @@
+import config
 import csv
 import pyrankvote
 from pyrankvote import Candidate, Ballot
@@ -8,11 +9,11 @@ def load() -> tuple[list[str], list[dict[str, str]]]:
     Loads data fom csv and choices.list.
     """
     # Read choices from choices.list
-    with open('choices.list', 'r') as choices_file:
+    with open(config.CHOICES_FILE, 'r') as choices_file:
         choices = choices_file.read().splitlines()
 
     # Read ballots from ballots.csv
-    with open('ballots.csv', 'r') as ballots_file:
+    with open(config.BALLOTS_FILE, 'r') as ballots_file:
         ballots = csv.DictReader(ballots_file)
         ballots = list(ballots)
 
@@ -27,16 +28,12 @@ def tabulatevotes():
     ballots = []
     for ballot in rawballots:
         ballots.append(Ballot(ranked_candidates=[choices[choice] for choice in ballot.values()]))
-    result = pyrankvote.instant_runoff_voting(list(choices.values()), ballots)
+    result = pyrankvote.single_transferable_vote(list(choices.values()), ballots, number_of_seats=config.SEATS)
     lastroundwinners = result.rounds[-1]
     print("Results:")
     winners = lastroundwinners.candidate_results
-    wincount = 0
-    for winner in winners:
-        if winner.number_of_votes == 0:
-            break
-        wincount += 1
-        print(f"[{'green' if wincount <= 2 else 'red'}]🎉 {winner.candidate.name}[/{'green' if wincount <= 2 else 'red'}]: {winner.number_of_votes}")
+    for winner in winners[0:config.SEATS]:
+        print(f"[bold green]🎉 {winner.candidate.name}[/bold green] - {winner.number_of_votes:.2f} votes")
 
 
 if __name__ == "__main__":
