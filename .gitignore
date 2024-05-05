@@ -2,3 +2,4 @@ ballots.csv
 choices.list
 __pycache__/**
 .vscode/**
+config.py
